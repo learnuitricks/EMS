@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Equipments from './Equipments';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,12 +15,13 @@ function App() {
     <div className="App">
       <Router>
         <div>
-          </div> 
+                    </div> 
 
           <Switch>
           <Route path="/">
             <Equipments category="vehicles" />
           </Route>
+      
           </Switch>
 
       </Router>

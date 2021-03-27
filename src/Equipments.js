@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import Home from './Home';
 import {
     BrowserRouter as Router,
     Switch,
@@ -68,8 +69,14 @@ class Equipments extends React.Component {
           
           
   </table>
+  <div>
+    <Link to='/Home'>Homes</Link> 
+  </div>
 
         <div>
+        <Route path="/Home">
+            <Home type="Duplex" />
+          </Route>
           </div> 
 
           <Switch>
