@@ -1,23 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
+import Equipments from './Equipments';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
+// all routing has to be defined here.
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Router>
+        <div>
+          </div> 
+
+          <Switch>
+          <Route path="/">
+            <Equipments category="vehicles" />
+          </Route>
+          </Switch>
+
+      </Router>
+      {/* based up on the url path i want to decide which component i want to load */}
     </div>
   );
 }
