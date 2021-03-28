@@ -12,6 +12,8 @@ import Equipment from './Equipment';
 class Equipments extends React.Component {
     constructor(props) {
         super(props);
+
+        // i am in the Axios Branch
         
         this.state = [{id:'eq01',name:'mixer1',date:'1998',maintenanceCycle:6},
         {id:'eq02',name:'mixer2',date:'1998',maintenanceCycle:6},
