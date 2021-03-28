@@ -7,6 +7,7 @@ import {
     Link
   } from "react-router-dom";
 import EquipmentDetails from './EquipmentDetails';
+import Equipment from './Equipment';
 
 class Equipments extends React.Component {
     constructor(props) {
@@ -41,24 +42,10 @@ class Equipments extends React.Component {
                </tr>
        </thead>
        
-              { this.state.map((Equipment,index)=>
+              { this.state.map((item,index)=>
               {
                   return(
-
-                      <tr>
-                      
-                   <td>{index+1}</td>
-
-
-             
-                    <td> {Equipment.id}</td>
-                    <td> 
-              <Link to={`/details/${Equipment.name}`}>{Equipment.name}</Link>
-            </td>
-                   
-                   <td>{Equipment.date}</td>
-                  <td> {Equipment.maintenanceCycle}</td>
-          </tr>
+                    <Equipment equipment={item} itemIndex={index}/>
                   )
               }
           )
