@@ -3,6 +3,7 @@ import {
   } from "react-router-dom";
 
 function Equipment(props){
+  // i am in axios branchs
     return(  <tr key={props.itemIndex}>
                       
         <td>{props.itemIndex+1}</td>

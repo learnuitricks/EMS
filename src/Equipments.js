@@ -8,21 +8,23 @@ import {
   } from "react-router-dom";
 import EquipmentDetails from './EquipmentDetails';
 import Equipment from './Equipment';
+import axios from 'axios';
 
 class Equipments extends React.Component {
+
+  state = {
+    equipments: []
+  }
     constructor(props) {
         super(props);
-
-        // i am in the Axios Branch
-        
-        this.state = [{id:'eq01',name:'mixer1',date:'1998',maintenanceCycle:6},
-        {id:'eq02',name:'mixer2',date:'1998',maintenanceCycle:6},
-        {id:'eq03',name:'boiler1',date:'2000',maintenanceCycle:8},
-        {id:'eq04',name:'freezer1',date:'2002',maintenanceCycle:6}];
-      }
-
+    }
+        //refactor this code to use axios
       componentDidMount(){
-          console.log(this.props);
+        axios.get(`http://demo8499217.mockable.io/Equipments`)
+        .then(res => {
+          const equipments = res.data;
+          this.setState({ equipments });
+        });
       }
 
 //using above equipments display the details of the equipment.
@@ -44,7 +46,7 @@ class Equipments extends React.Component {
                </tr>
        </thead>
        
-              { this.state.map((item,index)=>
+              { this.state.equipments.map((item,index)=>
               {
                   return(
                     <Equipment equipment={item} itemIndex={index}/>
