@@ -18,7 +18,6 @@ class Equipments extends React.Component {
     constructor(props) {
         super(props);
     }
-
         //refactor this code to use axios
       componentDidMount(){
         axios.get(`http://demo8499217.mockable.io/Equipments`)
